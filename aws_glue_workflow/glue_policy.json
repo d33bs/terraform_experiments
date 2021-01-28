@@ -1,0 +1,50 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucket"
+            ],
+
+            "Resource": [
+                "arn:aws:s3:::glue-testing-9ejk35cfz-data",
+                "arn:aws:s3:::glue-testing-9ejk35cfz-code"
+            ]
+        }, {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:ListBucket",
+                "s3:GetBucketAcl",
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+
+            "Resource": [
+                "arn:aws:s3:::glue-testing-9ejk35cfz-data",
+                "arn:aws:s3:::glue-testing-9ejk35cfz-data/*",
+                "arn:aws:s3:::glue-testing-9ejk35cfz-code",
+                "arn:aws:s3:::glue-testing-9ejk35cfz-code/*"
+            ]
+        }, {
+            "Effect": "Allow",
+            "Action": [
+                "glue:*"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }, {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:*:*:/aws-glue/*"
+            ]
+        }
+    ]
+}
